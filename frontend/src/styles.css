@@ -1,0 +1,126 @@
+body{
+	background: linear-gradient(-45deg, #1F4706, #395F0C, #5F8215, #85A51E);
+    margin:0;
+    }
+
+.navbar{
+    margin-bottom:20px;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom:30px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #09210778;
+  }
+
+li {
+    float: right;
+  }
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+li a:hover {
+    background-color: #111;
+  }
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-image: url('images/logo.png');
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;
+    left:130px; top:50px;
+  }
+  
+  @keyframes example {
+    0%   {background-color:rgb(33, 42, 24); left:130px; top:50px;}
+    25%  {background-color:rgb(10, 46, 15); left:950px; top:0px;}
+    50%  {background-color:rgb(113, 138, 15); left:950px; top:700px;}
+    75%  {background-color:rgb(9, 99, 9); left:130px; top:700px;}
+    100% {background-color:#22350b; left:130px; top:50px;}
+  }
+
+.container{
+   width:800px;
+   margin:0 auto;
+   margin-bottom:40px;
+}
+
+.container .item {
+    height: 500px;
+    position: relative;
+    width:800px;
+  }
+
+.container .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50% 20% / 10% 40%;
+  }
+
+.container .item .cover {
+    padding: 75px 0;
+    position: absolute;
+    width: 100%;
+    height:370px;
+    margin-bottom:30px;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+  }
+
+.container .item .cover .header-content {
+    position: relative;
+    padding: 43px;
+    overflow: hidden;
+  }
+
+.container .item .cover .header-content .line {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border: 9px solid #fff;
+    -webkit-clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+    clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+  }
+  
+.container .item .cover .header-content h2 {
+    font-weight: 300;
+    font-size: 35px;
+    color: #fff;
+  }
+
+.container .item .cover .header-content h1 {
+    font-size: 56px;
+    font-weight: 600;
+    margin: 5px 0 20px;
+    word-spacing: 3px;
+    color: #fff;
+  }
+
+.container .item .cover .header-content h4 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 36px;
+    color: #fff;
+  }
+
+
+
+
