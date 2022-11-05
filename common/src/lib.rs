@@ -53,13 +53,13 @@ pub struct Stats {
     pub coins_collected: u32,
 }
 
-impl Default for User {
-    fn default() -> Self {
+impl User {
+    pub fn new(id: u32, name: String, email: String, password: String) -> Self {
         Self {
-            id: 0,
-            name: String::new(),
-            email: String::new(),
-            password: String::new(),
+            id,
+            name,
+            email,
+            password,
             inventory: Inventory::default(),
             achievements: Achievements::default(),
             daily_quests: DailyQuest::default(),
