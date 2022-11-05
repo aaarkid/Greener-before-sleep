@@ -34,5 +34,28 @@ pub enum Trash {
     CigaretteButt,
     PaperBag,
     GlassBottle,
-    
+    LeftoverFood,
+    ChemicalWaste,
+    BottleCap,
+    PlasticStraw,
+    Metals,
+}
+
+impl Into<u32> for Trash {
+    fn into(self) -> u32 {
+        match self {
+            Trash::PlasticPackage => 2,
+            Trash::PlasticBottle => 4,
+            Trash::PlasticBag => 3,
+            Trash::PlasticCup => 3,
+            Trash::CigaretteButt => 2,
+            Trash::PaperBag => 2,
+            Trash::GlassBottle => 4,
+            Trash::LeftoverFood => 3,
+            Trash::ChemicalWaste => 8,
+            Trash::BottleCap => 2,
+            Trash::PlasticStraw => 2,
+            Trash::Metals => 10,
+        }
+    }
 }
