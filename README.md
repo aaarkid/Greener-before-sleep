@@ -10,21 +10,21 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/aaarkid/eta">
-    <img src="images/logo.png" alt="Logo" width="210" height="">
+  <a href="https://github.com/aaarkid/Greener-before-sleep">
+    <img src="logo.png" alt="Logo" width="210" height="">
   </a>
 
   <p align="center">
-    Rust library for tracking progress on repetive tasks and measuring estimated remaining times.
+    Make the world a little greener, one day at a time.
     <br />
-    <a href="https://github.com/aaarkid/eta"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/aaarkid/Greener-before-sleep"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/aaarkid/eta">View Demo</a>
+    <a href="https://github.com/aaarkid/Greener-before-sleep">View Demo</a>
     ·
-    <a href="https://github.com/aaarkid/eta/issues">Report Bug</a>
+    <a href="https://github.com/aaarkid/Greener-before-sleep/issues">Report Bug</a>
     ·
-    <a href="https://github.com/aaarkid/eta/issues">Request Feature</a>
+    <a href="https://github.com/aaarkid/Greener-before-sleep/issues">Request Feature</a>
   </p>
 </div>
 
@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-ETA aims to be a simple, easy to use, and efficient library for tracking progress on repetitive tasks. The main purpose of ETA is to measure remaining time, but it's being develop to include progress tracking and progress bar display too.
+Greener before sleep aims to generally motivate people with the simple idea of recieving a message in the morning to inspire them into being more sensible about the environment. This project objectively will result in having more appreciation for our surroundings and thus, a promising greener future.
 
 ### Built With
 
