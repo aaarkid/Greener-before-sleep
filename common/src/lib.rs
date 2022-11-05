@@ -3,6 +3,10 @@ pub struct User {
     pub name: String,
     pub email: String,
     pub password: String,
+    pub inventory: Inventory,
+    pub achievements: Achievements,
+    pub daily: DailyQuest,
+    pub stats: Stats,
 }
 
 pub struct Inventory {
@@ -24,6 +28,10 @@ pub struct DailyQuest {
     pub general: bool,
     pub specific: bool,
     pub wholesome: bool,
+}
+
+pub struct Stats {
+    
 }
 
 pub enum Trash {
