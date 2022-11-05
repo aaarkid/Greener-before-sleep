@@ -29,10 +29,10 @@ pub struct Achievements {
     pub trees_planted: u8,
     pub trash_cleaned: u8,
     pub coins_collected: u8,
-    pub plastic_hero: u8,
-    pub science_wizz: u8,
-    pub tree_hugger: u8,
-    pub nature_lover: bool,
+    pub plastic_hero: u8, // plastic_hero: achieved after specific number of plastic trash collected
+    pub science_wizz: u8, // science_wizz: achieved after specific number of chemical waste collected
+    pub tree_hugger: u8, // tree_hugger: achieved after specific number of trees planted
+    pub nature_lover: bool, // nature_lover: achieved when you are a beginner
 }
 
 pub struct DailyQuest {
