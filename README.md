@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Greener before sleep aims to generally motivate people with the simple idea of recieving a message in the morning to inspire them into being more sensible about the environment. This project objectively will result in having more appreciation for our surroundings and thus, a promising greener future.
+Greener before sleep aims to make an impact on our environment by motivating people to do simple tasks daily (i.e. picking up trash on the street). This project objectively will result in having more appreciation for our surroundings and thus, a promising greener future.
 
 ### Built With
 
