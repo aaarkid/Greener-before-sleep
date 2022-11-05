@@ -31,7 +31,11 @@ pub struct DailyQuest {
 }
 
 pub struct Stats {
-    
+    pub days_logged: u32,
+    pub days_logged_streak: u32,
+    pub trees_planted: u32,
+    pub trash_cleaned: u32,
+    pub coins_collected: u32,
 }
 
 pub enum Trash {
