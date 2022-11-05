@@ -21,7 +21,18 @@ pub struct Trees {
 }
 
 pub struct Achievements {
-
+    pub oak_planted: bool,
+    pub beech_planted: bool,
+    pub maple_planted: bool,
+    pub days_logged_in: u8,
+    pub days_logged_streaks: u8,
+    pub trees_planted: u8,
+    pub trash_cleaned: u8,
+    pub coins_collected: u8,
+    pub plastic_hero: u8,
+    pub science_wizz: u8,
+    pub tree_hugger: u8,
+    pub nature_lover: bool,
 }
 
 pub struct DailyQuest {
