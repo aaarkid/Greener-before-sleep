@@ -87,7 +87,6 @@ impl Default for Achievements {
             maple_planted: false,
             days_logged_in: 0,
             days_logged_streaks: 0,
-            trees_planted: 0,
             trash_cleaned: 0,
             coins_collected: 0,
             plastic_hero: 0,
