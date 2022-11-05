@@ -24,15 +24,18 @@ pub struct Achievements {
     pub oak_planted: bool,
     pub beech_planted: bool,
     pub maple_planted: bool,
-    pub days_logged_in: u8,
-    pub days_logged_streaks: u8,
-    pub trees_planted: u8,
-    pub trash_cleaned: u8,
-    pub coins_collected: u8,
-    pub plastic_hero: u8, // plastic_hero: achieved after specific number of plastic trash collected
-    pub science_wizz: u8, // science_wizz: achieved after specific number of chemical waste collected
-    pub tree_hugger: u8, // tree_hugger: achieved after specific number of trees planted
-    pub nature_lover: bool, // nature_lover: achieved when you are a beginner
+    pub days_logged_in: u8, // bronze medal: 7, silver: 30, gold: 90
+    pub days_logged_streaks: u8, // bronze: 3, silver: 7, gold: 21
+    pub trash_cleaned: u8, // bronze: 10, silver: 50, gold: 250
+    pub coins_collected: u8, // bronze: 50, silver: 200, gold: 1000
+    pub plastic_hero: u8, // bronze: 5, silver: 25, gold: 125
+     // plastic_hero: achieved after specific number of plastic trash collected
+    pub science_wizz: u8, // bronze: 1, silver: 3, gold: 10
+    // science_wizz: achieved after specific number of chemical waste collected
+    pub tree_hugger: u8, // bronze: 1, silver: 3, gold: 10
+    // tree_hugger: achieved after specific number of trees planted
+    pub nature_lover: bool, 
+    // nature_lover: achieved when you are a beginner
 }
 
 pub struct DailyQuest {
