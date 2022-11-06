@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
+use super::dashboard::DashSection;
 
 use super::super::Route;
 
@@ -21,7 +22,7 @@ pub fn login() -> Html {
                     <input type="password" class="form__input" autofocus=true placeholder="Password"/>
                     <div class="form__input-error-message"></div>
                 </div>
-                <Link<Route> to={Route::Dashboard}><button class="form__button" type="submit">{"Continue"}</button></Link<Route>>
+                <Link<Route> to={Route::Dashboard {section:{DashSection::Collect}}}><button class="form__button" type="submit">{"Continue"}</button></Link<Route>>
                 <p class="form__text">
                     <a class="form__link" href="./" id="linkCreateAccount">{"Don't have an account? Create account"}</a>
                 </p>
