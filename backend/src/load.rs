@@ -1,22 +1,24 @@
+use std::{collections::HashMap, io::BufReader};
 use common::*;
+use serde_json::from_reader;
 
 pub fn load () -> (Vec<User>, HashMap<User, Inventory>, HashMap<User, Achievements>, HashMap<User, DailyQuest>, HashMap<User, Stats>) {
     if std::path::Path::new("users.json").exists() {
         let file = std::fs::File::open("users.json").unwrap();
-        let reader = std::io::BufReader::new(file);
-        let users = serde_json::from_reader(reader).unwrap();
+        let reader = BufReader::new(file);
+        let users = from_reader(reader).unwrap();
         let file = std::fs::File::open("inventories.json").unwrap();
-        let reader = std::io::BufReader::new(file);
-        let inventories = serde_json::from_reader(reader).unwrap();
+        let reader = BufReader::new(file);
+        let inventories = from_reader(reader).unwrap();
         let file = std::fs::File::open("achievements.json").unwrap();
-        let reader = std::io::BufReader::new(file);
-        let achievements = serde_json::from_reader(reader).unwrap();
+        let reader = BufReader::new(file);
+        let achievements = from_reader(reader).unwrap();
         let file = std::fs::File::open("daily_quests.json").unwrap();
-        let reader = std::io::BufReader::new(file);
-        let daily_quests = serde_json::from_reader(reader).unwrap();
+        let reader = BufReader::new(file);
+        let daily_quests = from_reader(reader).unwrap();
         let file = std::fs::File::open("stats.json").unwrap();
-        let reader = std::io::BufReader::new(file);
-        let stats = serde_json::from_reader(reader).unwrap();
+        let reader = BufReader::new(file);
+        let stats = from_reader(reader).unwrap();
         (users, inventories, achievements, daily_quests, stats)
     } else {
         let file = std::fs::File::create("users.json").unwrap();

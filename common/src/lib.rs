@@ -1,4 +1,6 @@
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct User {
     pub id: u32,
     pub name: String,
@@ -10,7 +12,7 @@ pub struct User {
     pub stats: Stats,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct Inventory {
     pub coins: u32,
     pub oak: u32,
@@ -18,7 +20,7 @@ pub struct Inventory {
     pub maple: u32,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct Achievements {
     pub oak_planted: bool,
     pub beech_planted: bool,
@@ -37,14 +39,14 @@ pub struct Achievements {
     // nature_lover: achieved when you are a beginner
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct DailyQuest {
     pub general: bool,
     pub specific: bool,
     pub wholesome: bool,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct Stats {
     pub days_logged: u32,
     pub days_logged_streak: u32,

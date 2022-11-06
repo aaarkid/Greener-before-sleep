@@ -1,4 +1,4 @@
-use passwords::*;
+use super::passwords::*;
 use common::*;
 
 pub fn create_example_user_1() -> User {
