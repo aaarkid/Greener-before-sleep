@@ -127,13 +127,13 @@ pub fn daily_tasks() -> Html {
     <Dashboard />
         <div class="rowdaily">
             <div class="columndaily">
-            <img src="images/bottle cap.png"/>{"General"}
+            <img src="images/bg/garbage.png"/><h3>{"Paper Champion"}</h3>{"Collect 2 paper trash."}
             </div>
             <div class="columndaily">
-            <img src="images/cigarette butt.png"/>{"General"}
+            <img src="images/bg/group_of_people.png"/><h3>{"Wzzz Bizz"}</h3>{"Collect a battery or chemical waste."}
             </div>
             <div class="columndaily">
-            <img src="images/bottle cap.png"/>{"General"}
+            <img src="images/bg/wholesome.png"/><h3>{"Grateful Hero"}</h3>{"Hug your loved ones."}
             </div>
         </div>
     </>

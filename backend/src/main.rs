@@ -32,7 +32,6 @@ async fn main() {
     let post_date = warp::path!("add")
         .and(warp::post())
         .map(move || {
-            reqwe
             if (day.load(std::sync::atomic::Ordering::Relaxed) < 19) {
                 day.fetch_add(1, std::sync::atomic::Ordering::Relaxed)
             } else {
