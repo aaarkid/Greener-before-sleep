@@ -14,4 +14,5 @@ async fn main() {
     let mut users: Vec<User> = Vec::new();
     users.push(create_example_user_1());
 
+    
 }
