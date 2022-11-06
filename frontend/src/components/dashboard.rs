@@ -50,7 +50,7 @@ pub struct DashProps {
 }
 
 #[function_component(Dashboard)]
-pub fn dashboard(props: &DashProps) -> Html {
+pub fn dashboard() -> Html {
     html! {
 <>
     <section>
@@ -74,26 +74,12 @@ pub fn dashboard(props: &DashProps) -> Html {
         <div class="pane">
             <ul style="background:none;">
                 //each button has a big icon a title under
-                <li><Link<Route> to={Route::Dashboard {section:{DashSection::Collect}}}><img src="images/icons/collect.png" alt="collect" style="width: 70px; height: 70px; margin-top: 5px;"/></Link<Route>>{"Collect"}</li>
-                <li><Link<Route> to={Route::Dashboard {section:{DashSection::DailyTasks}}}><img src="images/icons/daily.png" alt="daily" style="width: 70px; height: 70px; margin-top: 5px;"/></Link<Route>>{"Daily Tasks"}</li>
-                <li><Link<Route> to={Route::Dashboard {section:{DashSection::Achievements}}}><img src="images/icons/achievments.png" alt="achievments" style="width: 70px; height: 70px; margin-top: 5px;"/></Link<Route>>{"Achievments"}</li>
-                <li><Link<Route> to={Route::Dashboard {section:{DashSection::Plant}}}><img src="images/icons/quest.png" alt="plant" style="width: 70px; height: 70px; margin-top: 5px;"/></Link<Route>>{"Plant"}</li>
+                <li><Link<Route> to={Route::Collect}><img src="images/icons/collect.png" alt="collect" style="width: 60px; height: 60px; margin-top: 5px;"/></Link<Route>>{"Collect"}</li>
+                <li><Link<Route> to={Route::DailyTasks}><img src="images/icons/daily.png" alt="daily" style="width: 60px; height: 60px; margin-top: 5px;"/></Link<Route>>{"Daily Tasks"}</li>
+                <li><Link<Route> to={Route::Achievements}><img src="images/icons/achievments.png" alt="achievments" style="width: 60px; height: 60px; margin-top: 5px;"/></Link<Route>>{"Achievements"}</li>
+                <li><Link<Route> to={Route::Plant}><img src="images/icons/quest.png" alt="plant" style="width: 60px; height: 60px; margin-top: 5px;"/></Link<Route>>{"Plant"}</li>
             </ul>
         </div>
-        { match props.section {
-            DashSection::Collect => html! {
-                <Collect />
-            },
-            DashSection::DailyTasks => html! {
-                <DailyTasks />
-            },
-            DashSection::Achievements => html! {
-                <Achievements />
-            },
-            DashSection::Plant => html! {
-                <Plant />
-            },
-        }}
     </section>
 </>
     }
@@ -103,30 +89,31 @@ pub fn dashboard(props: &DashProps) -> Html {
 pub fn collect() -> Html {
     html! {
     <>
+    <Dashboard />
         <div class="rowcollect">
             <div class="columncollect">
-            <img src="images/bottle cap.png"/>
-            <img src="images/chemical waste.png"/>
+            <img src="images/bottlecap.png"/>
+            <img src="images/chemicalwaste.png"/>
             </div>
             <div class="columncollect">
-            <img src="images/cigarette butt.png"/>
+            <img src="images/cigarette butt1.png"/>
             <img src="images/glass bottle.png"/>
             </div>
             <div class="columncollect">
-            <img src="images/bottle cap.png"/>
-            <img src="images/chemical waste.png"/>
+            <img src="images/leftoverfood.png"/>
+            <img src="images/metals.png"/>
             </div>
             <div class="columncollect">
-            <img src="images/cigarette butt.png"/>
-            <img src="images/glass bottle.png"/>
+            <img src="images/paperbag.png"/>
+            <img src="images/plasticbag.png"/>
             </div>
             <div class="columncollect">
-            <img src="images/bottle cap.png"/>
-            <img src="images/chemical waste.png"/>
+            <img src="images/plasticbottle.png"/>
+            <img src="images/plasticcup.png"/>
             </div>
             <div class="columncollect">
-            <img src="images/cigarette butt.png"/>
-            <img src="images/glass bottle.png"/>
+            <img src="images/plasticpackage.png"/>
+            <img src="images/plasticstraw.png"/>
             </div>
         </div>
     </>
@@ -137,6 +124,7 @@ pub fn collect() -> Html {
 pub fn daily_tasks() -> Html {
     html! {
     <>
+    <Dashboard />
         <div class="rowdaily">
             <div class="columndaily">
             <img src="images/bottle cap.png"/>{"General"}
@@ -156,6 +144,7 @@ pub fn daily_tasks() -> Html {
 pub fn achievments() -> Html {
     html! {
     <>
+    <Dashboard />
         <div class="rowachiev">
             <div class="columnachiev">
             <img src="images/icons/bronze trash cleaned.png"/>
@@ -203,6 +192,7 @@ pub fn achievments() -> Html {
 pub fn plant() -> Html {
     html! {
     <>
+    <Dashboard />
         <h2 style="text-align:center; color: #eeeeee;">{"Plant a tree with your coins."}</h2>
         <div class="rowdaily">
             <div class="columndaily">
