@@ -38,8 +38,14 @@ pub fn login() -> Html {
 r#"Column 2"#}
             </h2>
             <p>{
-r#"Some text..."#}
-            </p>
+r#"It all starts with a morning notification....
+It's a scientifically proven fact that people can be motivated very easily,
+when devices that are at their fingertips at all times give them this ounce 
+of inspiration. With this type of innovation, you can help build a better 
+and greener future for yourself and the community around you just 
+by doing simple mundane tasks everyday. Believe it, because it's possible! 
+Even the smallest contribution can eventually result in being a beautiful 
+planted tree someday."#} </p>
 
         </div>
     </div>
