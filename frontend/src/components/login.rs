@@ -38,6 +38,7 @@ pub fn login() -> Html {
             <h2>{
 r#"Column 2"#}
             </h2>
+            <div class="para">
             <p>{
 r#"It all starts with a morning notification....
 It's a scientifically proven fact that people can be motivated very easily,
@@ -47,6 +48,7 @@ and greener future for yourself and the community around you just
 by doing simple mundane tasks everyday. Believe it, because it's possible! 
 Even the smallest contribution can eventually result in being a beautiful 
 planted tree someday."#} </p>
+            </div>
 
         </div>
     </div>
