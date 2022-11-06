@@ -6,7 +6,7 @@ use load::*;
 use passwords::*;
 use testing::*;
 use common::*;
-use std::{collections::HashMap, sync::{atomic::AtomicU32, Arc}};
+use std::{collections::HashMap, sync::{atomic::AtomicU32, Arc}, io::Write};
 use warp::Filter;
 use reqwest::Client;
 
@@ -26,15 +26,20 @@ async fn main() {
         warp::reply::json(&shared_day.load(std::sync::atomic::Ordering::Relaxed))
     });
 
-    let get_quote = warp::path!("quote").map(|| {
-        warp::reply::json(&day.load(std::sync::atomic::Ordering::Relaxed))
+    let get_quote = warp::path!("quote").map({ 
+        let shared_day = Arc::clone(&day);
+        move || {
+            let day = shared_day.load(std::sync::atomic::Ordering::Relaxed);
+            let quote = quotes[day as usize - 1].as_str();
+            warp::reply::json(&quote)
+        }
     });
 
     
     //create a post route that increments the day and calls a function
     let post_date = warp::path!("add")
         .and(warp::post())
-        .map(|| {
+        .map( move || {
             //make a post request to the link https://api.twilio.com/2010-04-01/Accounts/AC2aca0b0375acdff08df264a951dc993e/Messages.json with data
             let client = Client::new();
             let _ = client.post("https://api.twilio.com/2010-04-01/Accounts/AC2aca0b0375acdff08df264a951dc993e/Messages.json")
@@ -42,6 +47,10 @@ async fn main() {
                 .form(&[("To", "+355699751977"), ("MessagingServiceSid", "MGe662c305172f061ad61d99e309a9cb64"), ("Body", "Don't forget to log in GBS today and feel good about your effort to make our planet greener! www.sustaining.tech/greener")])
                 .send();
 
+            let _ = std::fs::copy(format!("../frontend/images/bg/img{}.png", &day.load(std::sync::atomic::Ordering::Relaxed) + 1), "../frontend/images/bg/img.png");
+            // //create a quote.txt file and write the quote of the day to it
+            // let mut file = std::fs::File::create("../frontend/quote.txt").unwrap();
+            // let _ = file.write_all(quotes[day.load(std::sync::atomic::Ordering::Relaxed) as usize - 1].as_bytes());
             if (day.load(std::sync::atomic::Ordering::Relaxed) < 19) {
                 warp::reply::json(&day.fetch_add(1, std::sync::atomic::Ordering::Relaxed))
             } else {
@@ -51,5 +60,5 @@ async fn main() {
         });
 
     //serve the routes
-    warp::serve(get_date).run(([127, 0, 0, 1], 3030)).await;
+    warp::serve(get_date.or(post_date).or(get_quote)).run(([0, 0, 0, 0], 3030)).await;
 }

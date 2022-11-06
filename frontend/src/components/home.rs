@@ -4,6 +4,11 @@ use super::super::Route;
 
 #[function_component(Home)]
 pub fn home() -> Html {
+    // //read from file quote.txt and load the text as string
+    // let file = std::fs::File::open("quote.txt").unwrap();
+    // let mut contents = Vec::new();
+    // std::io::Read::read_to_end(&mut std::io::BufReader::new(file), &mut contents).unwrap();
+    // let quote = std::str::from_utf8(&contents).unwrap().to_owned();
     html! {
     <>
         <section>
@@ -21,7 +26,7 @@ pub fn home() -> Html {
         <section>
             <div class="container">
                     <div class="item">
-                        <img src="images/bg/img2.png" alt=""/>
+                        <img src="images/bg/img.png" alt=""/>
                         <div class="cover">
                             <div class="container">
                                 <div class="header-content">
