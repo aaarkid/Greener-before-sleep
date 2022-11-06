@@ -1,24 +1,23 @@
 body{
-	background: linear-gradient(-45deg, #1F4706, #395F0C, #5F8215, #85A51E);
+	  background: #507774;
     margin:0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    min-height: 100vh;
+}
 
 .navbar{
-    margin-bottom:20px;
 }
 
 .pane{
   float:left;
-  width: 20%;
-  height: 100%;
+  width: 10%;
+  height: 100vh;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
 }
 
 ul {
     list-style-type: none;
-    margin-bottom:30px;
     padding: 0;
     overflow: hidden;
     background-color: #09210778;
@@ -26,7 +25,7 @@ ul {
 
 li {
     float: right;
-  }
+}
 
 li a {
     display: block;
@@ -61,7 +60,7 @@ li a:hover {
 .container{
     width:800px;
     margin:0 auto;
-    margin-bottom:40px;
+    margin-bottom:0px;
 }
 
 .container .item {
