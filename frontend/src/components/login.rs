@@ -1,4 +1,7 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
+
+use super::super::Route;
 
 #[function_component(Login)]
 pub fn login() -> Html {
@@ -18,7 +21,7 @@ pub fn login() -> Html {
                     <input type="password" class="form__input" autofocus=true placeholder="Password"/>
                     <div class="form__input-error-message"></div>
                 </div>
-                <button class="form__button" type="submit">{"Continue"}</button>
+                <Link<Route> to={Route::Dashboard}><button class="form__button" type="submit">{"Continue"}</button></Link<Route>>
                 <p class="form__text">
                     <a class="form__link" href="./" id="linkCreateAccount">{"Don't have an account? Create account"}</a>
                 </p>
