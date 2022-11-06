@@ -21,7 +21,7 @@ pub fn home() -> Html {
         <section>
             <div class="container">
                     <div class="item">
-                        <img src="images/img2.png" alt=""/>
+                        <img src="images/bg/img2.png" alt=""/>
                         <div class="cover">
                             <div class="container">
                                 <div class="header-content">
