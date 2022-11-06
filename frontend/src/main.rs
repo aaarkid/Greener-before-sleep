@@ -10,8 +10,8 @@ enum Route {
     Home,
     #[at("/login")]
     Login,
-    #[at("/dashboard")]
-    Dashboard,
+    #[at("/dashboard/:section")]
+    Dashboard { section: DashSection },
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -25,8 +25,21 @@ fn switch(routes: &Route) -> Html {
         Route::Login => html! {
             <Login />
         },
-        Route::Dashboard => html! {
-            <Dashboard />
+        Route::Dashboard {section} => html! {
+            match section {
+                DashSection::Collect => html! {
+                    <Dashboard section={DashSection::Collect} />
+                },
+                DashSection::DailyTasks => html! {
+                    <Dashboard section={DashSection::DailyTasks} />
+                },
+                DashSection::Achievements => html! {
+                    <Dashboard section={DashSection::Achievements} />
+                },
+                DashSection::Plant => html! {
+                    <Dashboard section={DashSection::Plant} />
+                },
+            }
         },
         Route::NotFound => html! { <h1>{ "404" }</h1> },
     }
