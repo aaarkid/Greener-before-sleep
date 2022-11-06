@@ -11,9 +11,15 @@ pub fn dashboard() -> Html {
         <div class="navbar">
             <ul style="margin-top: 0px">
                 //number of icons and a coin icon
-                <li><img src="images/coin.png" alt="coin" style="width: 20; height: 20; margin-top: 5px;"/>{"80 Coins"}</li>
                 <img src="images/logo.png" alt="" style="padding-left: 5px; padding-top: 5px; height: 40px;"/>
                 <li><Link<Route> to={Route::Home}>{"Logout"}</Link<Route>></li>
+                <li style="
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                "><img src="images/icons/coin.png" alt="coin" style="width: 20px; height: 20px; padding-right
+                "/>{"80 Coins"}</li>
             </ul>
         </div>
     </section>
