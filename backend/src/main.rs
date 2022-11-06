@@ -12,7 +12,7 @@ use reqwest::Client;
 
 #[tokio::main]
 async fn main() {
-    let mut day = Arc::new(AtomicU32::new(1));
+    let mut day: Arc<AtomicU32> = Arc::new(AtomicU32::new(1));
     //read file quotes.txt and load the lines as strings into an array
     let file = std::fs::File::open("quotes.txt").unwrap();
     let mut contents = Vec::new();
@@ -20,8 +20,10 @@ async fn main() {
     let quotes = std::str::from_utf8(&contents).unwrap().lines().map(|s| s.to_string()).collect::<Vec<String>>();
     
     //create a get route that gives the current day
-    let get_date = warp::path!("date").map(|| {
-        warp::reply::json(&day.load(std::sync::atomic::Ordering::Relaxed))
+    let get_date = warp::path!("date").map({
+        let shared_day = Arc::clone(&day); 
+        move || 
+        warp::reply::json(&shared_day.load(std::sync::atomic::Ordering::Relaxed))
     });
 
     let get_quote = warp::path!("quote").map(|| {
